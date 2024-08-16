@@ -7,20 +7,26 @@ final kLightTheme = ThemeData.light().copyWith(
         color: Colors.blue
     ),
   textTheme: TextTheme(
-    bodyLarge: TextStyle(color: Colors.blue), // Устанавливаем цвет текста для bodyText1
-    bodyMedium: TextStyle(color: Colors.lightBlue, ), // Устанавливаем цвет текста для bodyText2
-  // Добавьте другие стили текста по необходимости
-),
+    bodyLarge: TextStyle(color: Colors.black,fontSize: 25,  ), // Устанавливаем цвет текста для bodyText1
+    bodyMedium: TextStyle(color: Colors.black, ), // Устанавливаем цвет текста для bodyText2
+    bodySmall: TextStyle(color: Colors.black87, ), // Устанавливаем цвет текста для bodyText2
+  ),
+  dividerColor: Colors.blue.shade400,
+    listTileTheme: ListTileThemeData(iconColor: Colors.blue)
 
 );
 final kDarkTheme = ThemeData.dark().copyWith(
   primaryColor: Colors.white,
     appBarTheme: AppBarTheme(
-    color: Colors.brown
+    color: Colors.teal
   ),
     textTheme: TextTheme(
-      bodyLarge: TextStyle(color: Colors.brown), // Устанавливаем цвет текста для bodyText1
-      bodyMedium: TextStyle(color: Colors.grey), // Устанавливаем цвет текста для bodyText2
-)
+      bodyLarge: TextStyle(color: Colors.white), // Устанавливаем цвет текста для bodyText1
+      bodyMedium: TextStyle(color: Colors.white), // Устанавливаем цвет текста для bodyText2
+      bodySmall: TextStyle(color: Colors.white60), // Устанавливаем цвет текста для bodyText2
+  ),
+    dividerColor: Colors.white30,
+  listTileTheme: ListTileThemeData(iconColor: Colors.white)
+
 );
 
