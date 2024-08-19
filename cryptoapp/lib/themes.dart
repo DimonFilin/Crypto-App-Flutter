@@ -7,7 +7,7 @@ final kLightTheme = ThemeData.light().copyWith(
         color: Colors.blue
     ),
   textTheme: TextTheme(
-    bodyLarge: TextStyle(color: Colors.black,fontSize: 25,  ), // Устанавливаем цвет текста для bodyText1
+    bodyLarge: TextStyle(color: Colors.black,fontSize: 20,  ), // Устанавливаем цвет текста для bodyText1
     bodyMedium: TextStyle(color: Colors.black, ), // Устанавливаем цвет текста для bodyText2
     bodySmall: TextStyle(color: Colors.black87, ), // Устанавливаем цвет текста для bodyText2
   ),
@@ -21,7 +21,7 @@ final kDarkTheme = ThemeData.dark().copyWith(
     color: Colors.teal
   ),
     textTheme: TextTheme(
-      bodyLarge: TextStyle(color: Colors.white), // Устанавливаем цвет текста для bodyText1
+      bodyLarge: TextStyle(color: Colors.white, fontSize: 20,), // Устанавливаем цвет текста для bodyText1
       bodyMedium: TextStyle(color: Colors.white), // Устанавливаем цвет текста для bodyText2
       bodySmall: TextStyle(color: Colors.white60), // Устанавливаем цвет текста для bodyText2
   ),
