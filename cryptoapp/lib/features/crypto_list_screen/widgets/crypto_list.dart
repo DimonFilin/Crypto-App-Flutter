@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/repositories/crypto_coins/models/crypto_coin_model.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
 class Crypto_list extends StatelessWidget {

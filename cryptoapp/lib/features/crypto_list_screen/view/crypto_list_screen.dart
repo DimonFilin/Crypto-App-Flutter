@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/repositories/crypto_coins/models/crypto_coin_model.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:get_it/get_it.dart';
+//import 'package:adaptive_theme/adaptive_theme.dart';
 import '../../../generated/l10n.dart';
+import '../../../repositories/crypto_coins/crypto_coins.dart';
 import '../widgets/widgets.dart';
-import 'package:flutter_app/repositories/crypto_coins/crypto_coins_repository.dart';
+import 'package:dio/dio.dart';
+
 
 class CryptoListScreen extends StatefulWidget {
   const CryptoListScreen({super.key});
@@ -24,7 +25,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
 
   Future <void> _loadCryptoCoins() async{
     //  AdaptiveTheme.of(context).toggleThemeMode();
-    _CryptoCoinsList = await CryptoCoinRepository().getCoinsList();
+    _CryptoCoinsList = await GetIt.I<AbstractCoinsRepository>().getCoinsList();
     setState(() {});
   }
   @override
@@ -35,11 +36,11 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
         appBar: AppBar(
             title: Text(
           S.of(context).appBarTitle,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: theme.textTheme.bodyLarge,
           textAlign: TextAlign.center,
         )),
         body: _CryptoCoinsList == null
-            ? const Center(child: CircularProgressIndicator(),)
+            ?  Center(child: CircularProgressIndicator(color: theme.textTheme.bodyLarge!.color),)
             : Container(
                 child: ListView.separated(
                   padding: EdgeInsets.only(top: 20),
