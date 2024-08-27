@@ -41,32 +41,46 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
           style: theme.textTheme.bodyLarge,
           textAlign: TextAlign.center,
         )),
-        body: BlocBuilder<CryptoListBloc, CryptoListState>(
-          bloc: _cryptoListBloc,
-          builder: (context, state) {
-            if (state is CryptoListLoaded) {
-              return Container(
-                child: ListView.separated(
-                    padding: EdgeInsets.only(top: 20),
-                    separatorBuilder: (context, i) => Divider(
-                          color: theme.dividerColor,
-                        ),
-                    itemCount: state.coinsList.length,
-                    itemBuilder: (context, i) {
-                      final coin = state.coinsList[i];
-                      final coinName = coin.name;
+        body: RefreshIndicator(
+          onRefresh: () async{
+            //final completer = Completer();
+            _cryptoListBloc.add(LoadCryptoList());
+            //return completer.future;
+            },
+          color: theme.primaryColor,
+          backgroundColor: theme.dividerColor,
+          child: BlocBuilder<CryptoListBloc, CryptoListState>(
+            bloc: _cryptoListBloc,
+            builder: (context, state) {
+              if (state is CryptoListLoaded) {
+                return Container(
+                  child: ListView.separated(
+                      padding: EdgeInsets.only(top: 20),
+                      separatorBuilder: (context, i) => Divider(
+                            color: theme.dividerColor,
+                          ),
+                      itemCount: state.coinsList.length,
+                      itemBuilder: (context, i) {
+                        final coin = state.coinsList[i];
+                        final coinName = coin.name;
 
-                      return Crypto_list(coin: coin);
-                    }),
+                        return Crypto_list(coin: coin);
+                      }),
+                );
+              }
+              if(state is CryptoListLoadingFail)
+                {return Center(child: Column(
+                  children: [
+                    Text(state.exception?.toString() ?? S.of(context).ErrorText1),
+                    OutlinedButton(onPressed: () {_cryptoListBloc.add(LoadCryptoList());}, child: Text(S.of(context).ErrorText2), style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(theme.primaryColor),))
+                  ],
+                ));}
+              return Center(
+                child: CircularProgressIndicator(
+                    color: theme.textTheme.bodyLarge!.color),
               );
-            }
-            if(state is CryptoListLoadingFail)
-              {return Center(child: Text(state.exeption?.toString() ?? 'Ошибка без перевода в текст, ожидайте фикса'));}
-            return Center(
-              child: CircularProgressIndicator(
-                  color: theme.textTheme.bodyLarge!.color),
-            );
-          },
+            },
+          ),
         ));
     // _CryptoCoinsList == null
     //     ?  Center(child: CircularProgressIndicator(color: theme.textTheme.bodyLarge!.color),)

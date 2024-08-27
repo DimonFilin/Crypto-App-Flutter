@@ -1,4 +1,6 @@
 {
   "appBarTitle": "Eng Appbar",
-  "MainTitle": "Main fjdfkjdkf"
+  "MainTitle": "Main fjdfkjdkf",
+  "ErrorText1": "Something went wrong",
+  "ErrorText2": "Try again"
 }

@@ -69,6 +69,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Something went wrong`
+  String get ErrorText1 {
+    return Intl.message(
+      'Something went wrong',
+      name: 'ErrorText1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get ErrorText2 {
+    return Intl.message(
+      'Try again',
+      name: 'ErrorText2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
