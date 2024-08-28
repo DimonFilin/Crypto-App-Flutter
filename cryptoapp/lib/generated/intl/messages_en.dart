@@ -26,6 +26,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "ErrorText2": MessageLookupByLibrary.simpleMessage("Try again"),
         "MainTitle": MessageLookupByLibrary.simpleMessage("Main fjdfkjdkf"),
-        "appBarTitle": MessageLookupByLibrary.simpleMessage("Eng Appbar")
+        "appBarTitle": MessageLookupByLibrary.simpleMessage("Crypto App"),
+        "change24":
+            MessageLookupByLibrary.simpleMessage("Change per 24 hours: "),
+        "changePct24":
+            MessageLookupByLibrary.simpleMessage("Change Pct per 24 hours: "),
+        "price": MessageLookupByLibrary.simpleMessage("Price: "),
+        "priceH24":
+            MessageLookupByLibrary.simpleMessage("Highest price per 24 hour: "),
+        "priceL24":
+            MessageLookupByLibrary.simpleMessage("Lowest price per 24 hour: "),
+        "volume24":
+            MessageLookupByLibrary.simpleMessage("Volume per 24 hours: "),
+        "volume24To":
+            MessageLookupByLibrary.simpleMessage("Volume per 24 hours (To): ")
       };
 }

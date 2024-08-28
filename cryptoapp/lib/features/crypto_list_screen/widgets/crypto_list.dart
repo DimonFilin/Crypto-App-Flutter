@@ -21,7 +21,7 @@ class Crypto_list extends StatelessWidget {
           style:
           TextStyle(color: theme.textTheme.bodyMedium?.color)),
       subtitle: Text(
-        ("${coin.priceInUSD} \$"),
+        (coin.priceInUSD<2)? coin.priceInUSD.toStringAsFixed(6).toString()+" \$":coin.priceInUSD.toStringAsFixed(2).toString()+" \$" ,
         style: TextStyle(color: theme.textTheme.bodySmall?.color),
       ),
       trailing: Icon(

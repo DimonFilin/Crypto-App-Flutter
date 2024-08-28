@@ -22,8 +22,8 @@ final kDarkTheme = ThemeData.dark().copyWith(
   ),
     textTheme: TextTheme(
       bodyLarge: TextStyle(color: Colors.white, fontSize: 20,), // Устанавливаем цвет текста для bodyText1
-      bodyMedium: TextStyle(color: Colors.white), // Устанавливаем цвет текста для bodyText2
-      bodySmall: TextStyle(color: Colors.white60), // Устанавливаем цвет текста для bodyText2
+      bodyMedium: TextStyle(color: Colors.white, fontSize: 18), // Устанавливаем цвет текста для bodyText2
+      bodySmall: TextStyle(color: Colors.white60, fontSize: 16), // Устанавливаем цвет текста для bodyText2
   ),
     dividerColor: Colors.white30,
   listTileTheme: ListTileThemeData(iconColor: Colors.white)

@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Eng Appbar`
+  /// `Crypto App`
   String get appBarTitle {
     return Intl.message(
-      'Eng Appbar',
+      'Crypto App',
       name: 'appBarTitle',
       desc: '',
       args: [],
@@ -85,6 +85,76 @@ class S {
     return Intl.message(
       'Try again',
       name: 'ErrorText2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price: `
+  String get price {
+    return Intl.message(
+      'Price: ',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Highest price per 24 hour: `
+  String get priceH24 {
+    return Intl.message(
+      'Highest price per 24 hour: ',
+      name: 'priceH24',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lowest price per 24 hour: `
+  String get priceL24 {
+    return Intl.message(
+      'Lowest price per 24 hour: ',
+      name: 'priceL24',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Volume per 24 hours: `
+  String get volume24 {
+    return Intl.message(
+      'Volume per 24 hours: ',
+      name: 'volume24',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Volume per 24 hours (To): `
+  String get volume24To {
+    return Intl.message(
+      'Volume per 24 hours (To): ',
+      name: 'volume24To',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change per 24 hours: `
+  String get change24 {
+    return Intl.message(
+      'Change per 24 hours: ',
+      name: 'change24',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Pct per 24 hours: `
+  String get changePct24 {
+    return Intl.message(
+      'Change Pct per 24 hours: ',
+      name: 'changePct24',
       desc: '',
       args: [],
     );

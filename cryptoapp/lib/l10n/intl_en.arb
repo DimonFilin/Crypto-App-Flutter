@@ -1,6 +1,13 @@
 {
-  "appBarTitle": "Eng Appbar",
+  "appBarTitle": "Crypto App",
   "MainTitle": "Main fjdfkjdkf",
   "ErrorText1": "Something went wrong",
-  "ErrorText2": "Try again"
+  "ErrorText2": "Try again",
+  "price": "Price: ",
+  "priceH24": "Highest price per 24 hour: ",
+  "priceL24": "Lowest price per 24 hour: ",
+  "volume24": "Volume per 24 hours: ",
+  "volume24To": "Volume per 24 hours (To): ",
+  "change24": "Change per 24 hours: ",
+  "changePct24": "Change Pct per 24 hours: "
 }

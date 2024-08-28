@@ -10,6 +10,8 @@ import '../bloc/crypto_coin_bloc.dart';
 //import '../widgets/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../widgets/widgets.dart';
+
 class CryptoCoinScreen extends StatefulWidget {
   const CryptoCoinScreen({super.key});
 
@@ -91,7 +93,7 @@ class _CryptoCoinScreenState extends State<CryptoCoinScreen> {
                         final coin = state.coin;
                         final coinName = coin.name;
                         //_cryptoListBloc.add(LoadCryptoCoin(coinName: coinName));
-                        return Container(child:  Text(state.coin.name),); //Crypto_list(coin: coin);
+                        return Crypto_Coin(coin: state.coin); //Crypto_list(coin: coin);
                       }),
                 );
               }
