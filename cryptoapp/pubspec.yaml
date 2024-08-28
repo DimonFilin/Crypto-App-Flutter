@@ -54,6 +54,9 @@ dev_dependencies:
   adaptive_theme: ^3.6.0
   dio: ^5.6.0
   equatable: ^2.0.5
+  talker_flutter: ^4.4.1
+  talker_dio_logger: ^4.4.1
+  talker_bloc_logger: ^4.4.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

@@ -7,6 +7,8 @@ import '../../../repositories/crypto_coins/crypto_coins.dart';
 import '../bloc/crypto_list_bloc.dart';
 import '../widgets/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:talker_flutter/talker_flutter.dart';
+import 'package:talker/talker.dart';
 
 class CryptoListScreen extends StatefulWidget {
   const CryptoListScreen({super.key});
@@ -16,7 +18,6 @@ class CryptoListScreen extends StatefulWidget {
 }
 
 class _CryptoListScreenState extends State<CryptoListScreen> {
-
   final _cryptoListBloc = CryptoListBloc(GetIt.I<AbstractCoinsRepository>());
 
   @override
@@ -36,17 +37,18 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
 
     return Scaffold(
         appBar: AppBar(
+          actions: [IconButton(onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => TalkerScreen(talker: GetIt.I<Talker>())));}, icon: Icon(Icons.document_scanner_outlined, color: theme.primaryColor,) )],
             title: Text(
           S.of(context).appBarTitle,
           style: theme.textTheme.bodyLarge,
           textAlign: TextAlign.center,
         )),
         body: RefreshIndicator(
-          onRefresh: () async{
+          onRefresh: () async {
             //final completer = Completer();
             _cryptoListBloc.add(LoadCryptoList());
             //return completer.future;
-            },
+          },
           color: theme.primaryColor,
           backgroundColor: theme.dividerColor,
           child: BlocBuilder<CryptoListBloc, CryptoListState>(
@@ -68,13 +70,24 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                       }),
                 );
               }
-              if(state is CryptoListLoadingFail)
-                {return Center(child: Column(
+              if (state is CryptoListLoadingFail) {
+                return Center(
+                    child: Column(
                   children: [
-                    Text(state.exception?.toString() ?? S.of(context).ErrorText1),
-                    OutlinedButton(onPressed: () {_cryptoListBloc.add(LoadCryptoList());}, child: Text(S.of(context).ErrorText2), style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(theme.primaryColor),))
+                    Text(state.exception?.toString() ??
+                        S.of(context).ErrorText1),
+                    OutlinedButton(
+                        onPressed: () {
+                          _cryptoListBloc.add(LoadCryptoList());
+                        },
+                        child: Text(S.of(context).ErrorText2),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              theme.primaryColor),
+                        ))
                   ],
-                ));}
+                ));
+              }
               return Center(
                 child: CircularProgressIndicator(
                     color: theme.textTheme.bodyLarge!.color),
